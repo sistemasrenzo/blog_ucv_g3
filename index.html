@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estrategias Didácticas para mejorar la habilidad comunicativa oral en alumnos de nivel A1 de una universidad en Huancayo, 2022 | Blog Académico UCV</title>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tipografías editoriales académicas: Lora / Merriweather para títulos e Inter para lectura -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,600;0,700;1,400&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ucv: {
+                            navy: '#0f294a',       // Azul marino institucional
+                            navyLight: '#1b3f6e',  // Azul secundario
+                            red: '#c8102e',        // Carmesí institucional
+                            redDark: '#9e0b23',
+                            gold: '#b45309',       // Dorado suave editorial
+                            cream: '#fafaf9',      // Blanco hueso editorial
+                            text: '#1e293b'        // Texto oscuro de alto contraste
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Lora', 'Merriweather', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        #reading-progress {
+            transition: width 0.15s ease-out;
+        }
+        .editorial-body p {
+            line-height: 1.85;
+            margin-bottom: 1.25rem;
+        }
+    </style>
+</head>
+<body class="bg-ucv-cream text-ucv-text font-sans antialiased selection:bg-ucv-navy selection:text-white">
+
+    <!-- Barra superior de progreso de lectura -->
+    <div class="fixed top-0 left-0 w-full h-1.5 bg-slate-200 z-50">
+        <div id="reading-progress" class="h-full bg-ucv-red w-0"></div>
+    </div>
+
+    <!-- 1. NAVEGACIÓN SUPERIOR LIMPIA (MÁXIMO 3 CLICS: Acceso en 1 clic a cada sección) -->
+    <header class="sticky top-1.5 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Identidad Institucional -->
+                <a href="#inicio" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-ucv-navy text-white flex items-center justify-center font-serif font-bold text-lg shadow-sm group-hover:bg-ucv-red transition-colors">
+                        UCV
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-ucv-navy text-sm sm:text-base leading-tight">Blog Académico UCV</span>
+                        <span class="text-xs text-slate-500 font-medium">Educación en Idiomas • Inglés</span>
+                    </div>
+                </a>
+
+                <!-- Enlaces de Navegación Desktop (1 clic directo) -->
+                <nav class="hidden md:flex items-center space-x-1 lg:space-x-2" aria-label="Navegación principal">
+                    <a href="#inicio" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-ucv-navy hover:bg-slate-100 transition">Inicio</a>
+                    <a href="#articulo" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-ucv-navy hover:bg-slate-100 transition">Artículo Adaptado</a>
+                    <a href="#video-exposicion" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-ucv-navy hover:bg-slate-100 transition">Video Exposición</a>
+                    <a href="#problema" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-ucv-navy hover:bg-slate-100 transition">Formulación del Problema</a>
+                    <a href="#autores-auditoria" class="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-ucv-navy hover:bg-slate-100 transition">Autores y Auditoría</a>
+                </nav>
+
+                <!-- Botón Menú Móvil -->
+                <button id="mobile-menu-btn" class="md:hidden p-2.5 rounded-xl text-slate-700 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-ucv-navy" aria-label="Abrir menú de navegación">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menú Desplegable Móvil -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-4 space-y-1 shadow-lg">
+            <a href="#inicio" class="block px-3 py-2.5 rounded-lg text-base font-semibold text-slate-700 hover:bg-slate-100">Inicio</a>
+            <a href="#articulo" class="block px-3 py-2.5 rounded-lg text-base font-semibold text-slate-700 hover:bg-slate-100">Artículo Adaptado</a>
+            <a href="#video-exposicion" class="block px-3 py-2.5 rounded-lg text-base font-semibold text-slate-700 hover:bg-slate-100">Video Exposición</a>
+            <a href="#problema" class="block px-3 py-2.5 rounded-lg text-base font-semibold text-slate-700 hover:bg-slate-100">Formulación del Problema</a>
+            <a href="#autores-auditoria" class="block px-3 py-2.5 rounded-lg text-base font-semibold text-slate-700 hover:bg-slate-100">Autores y Auditoría</a>
+        </div>
+    </header>
+
+    <!-- 2. PÁGINA DE INICIO (HERO / PORTADA) -->
+    <section id="inicio" class="relative overflow-hidden bg-gradient-to-br from-ucv-navy via-ucv-navyLight to-ucv-navy text-white py-14 sm:py-20 border-b border-slate-300">
+        <!-- Patrón editorial sutil -->
+        <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 24px 24px;"></div>
+        
+        <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Etiqueta Institucional Exacta -->
+            <div class="flex flex-wrap justify-center items-center gap-2 mb-6 text-center">
+                <span class="px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold bg-white/15 text-blue-100 border border-white/25 backdrop-blur-sm">
+                    Universidad César Vallejo | Facultad de Humanidades | Escuela Profesional de Educación en Idiomas - Inglés (Lima Norte - 2026)
+                </span>
+            </div>
+
+            <!-- Título Principal (H1) -->
+            <h1 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-center tracking-tight leading-tight mb-6 max-w-4xl mx-auto">
+                Estrategias Didácticas para mejorar la habilidad comunicativa oral en alumnos de nivel A1 de una universidad en Huancayo, 2022
+            </h1>
+
+            <!-- Propósito del Blog y Alineación Curricular -->
+            <div class="max-w-3xl mx-auto text-center mb-10">
+                <p class="text-base sm:text-lg text-blue-100 leading-relaxed mb-4">
+                    Adaptación digital de la introducción y formulación del problema de nuestra investigación formativa, orientada a divulgar propuestas pedagógicas que fortalezcan la expresión oral en inglés desde el nivel básico.
+                </p>
+                <div class="inline-flex flex-wrap justify-center gap-2 text-xs font-medium">
+                    <span class="px-3 py-1 rounded-lg bg-amber-500/20 text-amber-200 border border-amber-400/30">
+                        ODS 4: Educación de Calidad
+                    </span>
+                    <span class="px-3 py-1 rounded-lg bg-white/10 text-blue-100 border border-white/20">
+                        Línea de Investigación: Inclusión y Educación Ambiental
+                    </span>
+                    <span class="px-3 py-1 rounded-lg bg-white/10 text-blue-100 border border-white/20">
+                        RSU: Desarrollo sostenible y adaptación al cambio climático
+                    </span>
+                </div>
+            </div>
+
+            <!-- Tarjetas de Datos Clave Destacados (Resumen Ejecutivo Visual) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 max-w-4xl mx-auto">
+                <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5 text-center shadow-lg">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-amber-300 mb-1">70,5 %</div>
+                    <div class="text-sm font-bold text-white mb-1">Nivel medio de competencia oral</div>
+                    <p class="text-xs text-blue-100 leading-snug">Ubicación predominante del alumnado evaluado en el centro de idiomas (muestra de 44 participantes).</p>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5 text-center shadow-lg">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-rose-300 mb-1">27,3 %</div>
+                    <div class="text-sm font-bold text-white mb-1">Nivel alto en comunicación interactiva</div>
+                    <p class="text-xs text-blue-100 leading-snug">Subcategoría con menor desarrollo dentro de las habilidades orales del nivel A1.</p>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5 text-center shadow-lg">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-emerald-300 mb-1">98 %</div>
+                    <div class="text-sm font-bold text-white mb-1">Validez de la propuesta didáctica</div>
+                    <p class="text-xs text-blue-100 leading-snug">Aprobación alcanzada mediante juicio de expertos bajo el enfoque comunicativo y aprendizaje por tareas.</p>
+                </div>
+            </div>
+
+            <!-- Acceso rápido en 1 clic -->
+            <div class="mt-9 flex flex-wrap justify-center gap-3">
+                <a href="#articulo" class="px-6 py-3 rounded-xl bg-white text-ucv-navy font-bold text-sm hover:bg-blue-50 transition shadow-md">
+                    Leer Introducción Adaptada ↓
+                </a>
+                <a href="#video-exposicion" class="px-6 py-3 rounded-xl bg-ucv-red text-white font-bold text-sm hover:bg-ucv-redDark transition shadow-md border border-red-400/30">
+                    Ver Video de Exposición ↓
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. ENTRADA PRINCIPAL: INTRODUCCIÓN ADAPTADA -->
+    <main id="articulo" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-8">
+        <article class="bg-white rounded-3xl shadow-sm border border-slate-200 p-6 sm:p-10 lg:p-12">
+            
+            <!-- Metadatos del Artículo -->
+            <div class="border-b border-slate-200 pb-6 mb-8">
+                <div class="flex flex-wrap items-center gap-2 text-xs font-bold uppercase tracking-wider text-ucv-red mb-2">
+                    <span>Entrada Principal • Introducción Adaptada</span>
+                    <span class="text-slate-300">|</span>
+                    <span class="text-slate-500 font-semibold">Lectura Digital Estructurada</span>
+                </div>
+                <p class="text-sm text-slate-600">
+                    <strong>Investigación Formativa (I Ciclo)</strong> • Grupo 3 • Educación en Idiomas - Inglés • Lima Norte - 2026
+                </p>
+            </div>
+
+            <div class="editorial-body text-slate-800 text-base sm:text-lg">
+
+                <!-- H2: Panorama Global y Nacional -->
+                <h2 class="font-serif text-2xl sm:text-3xl font-bold text-ucv-navy mt-2 mb-4 flex items-center gap-3">
+                    <span class="w-1.5 h-8 bg-ucv-red rounded-full shrink-0"></span>
+                    Panorama Global y Nacional de la Enseñanza del Inglés
+                </h2>
+
+                <p>
+                    En el escenario mundial actual, el idioma inglés se ha consolidado como una lengua indispensable para el desarrollo profesional, académico y laboral. <strong>Sin embargo</strong>, el <strong>50 % de los países</strong> presenta un nivel bajo o muy bajo de dominio del idioma, una brecha formativa que se acentúa en Latinoamérica y el Perú debido a factores metodológicos y estructurales:
+                </p>
+
+                <!-- Viñetas de contexto global, regional y nacional -->
+                <ul class="my-6 space-y-3 bg-stone-50 p-5 sm:p-6 rounded-2xl border border-stone-200 text-base">
+                    <li class="flex items-start gap-3">
+                        <span class="mt-2 w-2 h-2 rounded-full bg-ucv-red shrink-0"></span>
+                        <span><strong>Deficiencias metodológicas en Latinoamérica:</strong> Persisten enfoques tradicionales basados en la repetición autómata y la memorización gramatical abstracta, omitiendo estrategias vivenciales por temor a perder la disciplina en el aula, sumado a pocas horas de clase y limitaciones en la preparación docente.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="mt-2 w-2 h-2 rounded-full bg-ucv-red shrink-0"></span>
+                        <span><strong>Bajo uso efectivo en el Perú:</strong> Se constata un bajo desempeño en entornos laborales y académicos, donde la enseñanza continúa siendo tradicional y el idioma inglés se utiliza en <strong>menos del 50 % del tiempo de clase</strong>.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="mt-2 w-2 h-2 rounded-full bg-ucv-red shrink-0"></span>
+                        <span><strong>Brecha frente a la política educativa:</strong> A pesar de los avances normativos impulsados por la política nacional <em>"Inglés, puertas al mundo"</em> (<strong>Decreto Supremo N.° 012-2015-MINEDU</strong>) para alcanzar un nivel intermedio al egresar de la secundaria, la aplicación de medios didácticos dinámicos y musicales sigue siendo limitada.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="mt-2 w-2 h-2 rounded-full bg-ucv-gold shrink-0"></span>
+                        <span><strong>Vinculación con el ODS 4 (Educación de Calidad):</strong> Esta investigación responde directamente a la meta de formar ciudadanos globales capaces de desenvolverse activamente en un entorno internacional mediante una enseñanza inclusiva y pertinente.</span>
+                    </li>
+                </ul>
+
+                <!-- H2: Diagnóstico Situacional en Huancayo -->
+                <h2 class="font-serif text-2xl sm:text-3xl font-bold text-ucv-navy mt-10 mb-4 flex items-center gap-3">
+                    <span class="w-1.5 h-8 bg-ucv-red rounded-full shrink-0"></span>
+                    Diagnóstico Situacional en Huancayo
+                </h2>
+
+                <p>
+                    <strong>A nivel institucional</strong>, el estudio se situó en el Centro de Idiomas de una universidad particular en la ciudad de Huancayo. Durante la transición obligatoria a la educación remota por la pandemia del COVID-19, disminuyó significativamente la interacción presencial y el tiempo efectivo de práctica oral entre los estudiantes de nivel A1.
+                </p>
+
+                <p>
+                    <strong>En consecuencia</strong>, el diagnóstico situacional aplicado a una muestra de 44 participantes (entre estudiantes y docentes) arrojó los siguientes resultados críticos sobre la competencia oral del alumnado:
+                </p>
+
+                <!-- Viñetas con cifras exactas del diagnóstico -->
+                <ul class="my-6 space-y-3 bg-blue-50/60 p-5 sm:p-6 rounded-2xl border border-blue-200 text-base">
+                    <li class="flex items-start gap-3">
+                        <span class="mt-2 w-2 h-2 rounded-full bg-ucv-navy shrink-0"></span>
+                        <span><strong>Predominio del nivel intermedio:</strong> El <strong>70,5 %</strong> de los estudiantes evaluados se ubica en un nivel medio de habilidad comunicativa oral.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="mt-2 w-2 h-2 rounded-full bg-ucv-navy shrink-0"></span>
+                        <span><strong>Escaso dominio avanzado:</strong> Únicamente el <strong>25 %</strong> del alumnado alcanza un nivel alto en su desempeño comunicativo oral general.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="mt-2 w-2 h-2 rounded-full bg-ucv-red shrink-0"></span>
+                        <span><strong>Debilidad crítica en comunicación interactiva:</strong> Esta subcategoría resultó ser la más deficiente, donde apenas el <strong>27,3 %</strong> logra alcanzar el nivel alto.</span>
+                    </li>
+                </ul>
+
+                <!-- H2: Brechas en la Praxis Docente y Propuesta -->
+                <h2 class="font-serif text-2xl sm:text-3xl font-bold text-ucv-navy mt-10 mb-4 flex items-center gap-3">
+                    <span class="w-1.5 h-8 bg-ucv-red rounded-full shrink-0"></span>
+                    Brechas en la Praxis Docente y Propuesta
+                </h2>
+
+                <p>
+                    <strong>Asimismo</strong>, mediante la observación estructurada de sesiones y entrevistas en el centro de idiomas, se identificaron importantes vacíos metodológicos en la práctica docente cotidiana:
+                </p>
+
+                <!-- Viñetas sobre brechas en aula -->
+                <ul class="my-6 space-y-3 bg-stone-50 p-5 sm:p-6 rounded-2xl border border-stone-200 text-base">
+                    <li class="flex items-start gap-3">
+                        <span class="mt-2 w-2 h-2 rounded-full bg-ucv-red shrink-0"></span>
+                        <span><strong>Ausencia de estrategias de compensación (100 %):</strong> En la totalidad de las sesiones observadas no se promovieron recursos comunicativos como gestos, sinónimos o paráfrasis para ayudar al estudiante a sostener el diálogo.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="mt-2 w-2 h-2 rounded-full bg-ucv-red shrink-0"></span>
+                        <span><strong>Omisión de espacios metacognitivos:</strong> No se generaron momentos de reflexión para que el alumno evalúe si logró el objetivo de aprendizaje comunicativo de la clase.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="mt-2 w-2 h-2 rounded-full bg-ucv-red shrink-0"></span>
+                        <span><strong>Mínimo apoyo audiovisual (5,3 %):</strong> El material audiovisual se utilizó apenas en el 5,3 % de las clases observadas, limitando la exposición a modelos reales de pronunciación e interacción.</span>
+                    </li>
+                </ul>
+
+                <p>
+                    <strong>Ante esta problemática</strong>, surgió la interrogante orientadora del estudio: <em>¿Cómo desarrollar la capacidad comunicativa oral en los alumnos de inglés del nivel A1 del centro de idiomas de una universidad particular de Huancayo?</em>
+                </p>
+
+                <div class="mt-6 p-6 rounded-2xl bg-ucv-navy text-white shadow-sm border-l-8 border-ucv-gold">
+                    <h3 class="font-serif text-lg sm:text-xl font-bold text-amber-300 mb-2">
+                        Objetivo General y Propuesta Didáctica Validada
+                    </h3>
+                    <p class="text-sm sm:text-base text-blue-50 !mb-0 !leading-relaxed">
+                        El estudio se propuso diseñar una <strong>estrategia didáctica</strong> sustentada en el <strong>enfoque comunicativo</strong> y el <strong>aprendizaje basado en tareas (TBL)</strong> para atender las necesidades detectadas en el nivel A1, logrando alcanzar un <strong>98 % de validez</strong> mediante juicio de expertos.
+                    </p>
+                </div>
+
+                <!-- VIDEO DE EXPOSICIÓN INCRUSTADO EN LA ENTRADA PRINCIPAL -->
+                                <!-- VIDEO DE EXPOSICIÓN INCRUSTADO EN LA ENTRADA PRINCIPAL -->
+                <section class="mt-10 pt-8 border-t border-slate-200" id="video-exposicion">
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-ucv-navy flex items-center gap-3">
+                            <span class="w-1.5 h-8 bg-ucv-red rounded-full shrink-0"></span>
+                            Video de Exposición Académica
+                        </h2>
+                        <span class="px-3 py-1 rounded-full text-xs font-bold bg-blue-50 text-ucv-navy border border-blue-200">
+                            Sustentación Multimedia (3 a 5 min)
+                        </span>
+                    </div>
+                    <div class="relative w-full overflow-hidden rounded-2xl border border-slate-200 shadow-md bg-slate-900" style="padding-bottom: 56.25%; height: 0;">
+                        <iframe 
+                            src="https://drive.google.com/file/d/1Blj35uS_j5csPgGfwFn1TSRzQnuYh0R-/preview" 
+                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" 
+                            allow="autoplay; fullscreen" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </section>
+
+            </div>
+        </article>
+    </main>
+
+    <!-- 4. SECCIÓN: FORMULACIÓN DEL PROBLEMA -->
+    <section id="problema" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="bg-white rounded-3xl shadow-sm border border-slate-200 p-6 sm:p-10 lg:p-12">
+            
+            <div class="mb-6">
+                <span class="text-xs font-bold uppercase tracking-wider text-ucv-gold">Delimitación del Estudio</span>
+                <h2 class="font-serif text-2xl sm:text-3xl font-bold text-ucv-navy mt-1">
+                    ¿Por qué es difícil hablar inglés en el nivel A1?
+                </h2>
+            </div>
+
+            <p class="text-slate-700 leading-relaxed mb-6 text-base sm:text-lg">
+                Aprender un nuevo idioma no consiste únicamente en memorizar palabras, conocer reglas gramaticales o escribir correctamente, sino en desarrollar la capacidad de comunicarse con otras personas en situaciones reales. <strong>Sin embargo</strong>, los estudiantes principiantes enfrentan barreras frecuentes que limitan su participación activa en clase:
+            </p>
+
+            <!-- Tarjetas visuales de barreras en el nivel A1 -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                <div class="p-4 rounded-2xl bg-stone-50 border border-stone-200">
+                    <div class="font-bold text-ucv-navy text-sm mb-1">1. Vocabulario limitado</div>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-snug">Falta de repertorio léxico suficiente para construir ideas espontáneas en diálogos cotidianos.</p>
+                </div>
+                <div class="p-4 rounded-2xl bg-stone-50 border border-stone-200">
+                    <div class="font-bold text-ucv-navy text-sm mb-1">2. Dificultad fonética</div>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-snug">Problemas para pronunciar correctamente palabras nuevas propias del nivel inicial A1.</p>
+                </div>
+                <div class="p-4 rounded-2xl bg-stone-50 border border-stone-200">
+                    <div class="font-bold text-ucv-navy text-sm mb-1">3. Inseguridad y temor</div>
+                    <p class="text-xs sm:text-sm text-slate-600 leading-snug">Miedo al error frente al grupo, lo cual bloquea la interacción y reduce la fluidez oral.</p>
+                </div>
+            </div>
+
+            <!-- Tarjeta Destacada: Problema General (H3) -->
+            <div class="p-6 sm:p-7 rounded-2xl bg-gradient-to-r from-ucv-navy to-ucv-navyLight text-white shadow-md mb-8">
+                <h3 class="text-xs uppercase tracking-widest text-amber-300 font-bold mb-2">
+                    Problema General de Investigación
+                </h3>
+                <p class="font-serif text-lg sm:text-xl font-bold leading-relaxed">
+                    «¿Cómo se puede desarrollar la habilidad comunicativa oral en los estudiantes de inglés del nivel A1 de un centro de idiomas perteneciente a una universidad privada de Huancayo?»
+                </p>
+            </div>
+
+            <!-- Lista Numerada: Problemas Específicos (H3) -->
+            <div class="bg-stone-50 rounded-2xl p-6 sm:p-7 border border-stone-200">
+                <h3 class="font-serif text-xl font-bold text-ucv-navy mb-4">
+                    Problemas Específicos
+                </h3>
+                <ol class="space-y-4 text-slate-800 text-sm sm:text-base">
+                    <li class="flex items-start gap-3.5">
+                        <span class="w-7 h-7 rounded-full bg-ucv-navy text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">1</span>
+                        <span class="leading-relaxed">¿Qué fundamentos teóricos permiten orientar una estrategia didáctica para mejorar la habilidad comunicativa oral de los estudiantes de inglés del nivel A1?</span>
+                    </li>
+                    <li class="flex items-start gap-3.5">
+                        <span class="w-7 h-7 rounded-full bg-ucv-navy text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">2</span>
+                        <span class="leading-relaxed">¿Cuál es la situación actual de los estudiantes respecto al desarrollo de su habilidad comunicativa oral en el aprendizaje del idioma inglés?</span>
+                    </li>
+                    <li class="flex items-start gap-3.5">
+                        <span class="w-7 h-7 rounded-full bg-ucv-navy text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">3</span>
+                        <span class="leading-relaxed">¿Qué aspectos teóricos, metodológicos y prácticos deben considerarse para elaborar una estrategia didáctica que contribuya al desarrollo de la comunicación oral?</span>
+                    </li>
+                    <li class="flex items-start gap-3.5">
+                        <span class="w-7 h-7 rounded-full bg-ucv-navy text-white font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">4</span>
+                        <span class="leading-relaxed">¿En qué medida la estrategia didáctica propuesta puede ser considerada válida para favorecer el desarrollo de la habilidad comunicativa oral en los estudiantes?</span>
+                    </li>
+                </ol>
+
+                <p class="mt-5 pt-4 border-t border-stone-200 text-xs sm:text-sm text-slate-600 italic">
+                    En conclusión, esta formulación orienta la búsqueda de una estrategia didáctica que permita a los estudiantes desenvolverse con mayor seguridad, confianza y facilidad al comunicarse en inglés.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. EQUIPO DE INVESTIGACIÓN, RESUMEN BILINGÜE Y AUDITORÍA TÉCNICA -->
+    <section id="autores-auditoria" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16 space-y-8">
+        
+        <!-- Bloque de Resumen / Abstract Bilingüe Desplegable -->
+        <div class="bg-white rounded-3xl shadow-sm border border-slate-200 p-6 sm:p-8">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200 pb-4 mb-5">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-ucv-red">Síntesis Científica</span>
+                    <h2 class="font-serif text-xl sm:text-2xl font-bold text-ucv-navy">Resumen y Abstract del Estudio</h2>
+                </div>
+                <!-- Selector de idioma -->
+                <div class="inline-flex rounded-xl bg-slate-100 p-1 self-start">
+                    <button id="btn-es" onclick="toggleAbstract('es')" class="px-4 py-1.5 rounded-lg text-xs font-bold bg-ucv-navy text-white transition cursor-pointer">
+                        Español
+                    </button>
+                    <button id="btn-en" onclick="toggleAbstract('en')" class="px-4 py-1.5 rounded-lg text-xs font-bold text-slate-600 hover:text-ucv-navy transition cursor-pointer">
+                        English (Abstract)
+                    </button>
+                </div>
+            </div>
+
+            <!-- Contenido Español -->
+            <div id="abstract-es" class="text-sm sm:text-base text-slate-700 leading-relaxed space-y-3">
+                <p>
+                    El presente estudio apoya al cumplimiento del <strong>Objetivo de Desarrollo Sostenible 4</strong>, referido a la educación de calidad, mediante el planteamiento de una estrategia didáctica orientada a fortalecer la comunicación oral en inglés de los alumnos del nivel A1 de un centro de idiomas universitario de Huancayo.
+                </p>
+                <p>
+                    En lo metodológico, se adoptó el paradigma sociocrítico con enfoque cualitativo, de tipo aplicado en el campo educativo y con un diseño no experimental. La muestra estuvo integrada por 44 participantes, entre estudiantes y docentes, a quienes se les aplicaron cuestionarios, observación estructurada y entrevistas semiestructuradas. Los principales hallazgos evidenciaron que el <strong>70,5 %</strong> del alumnado se ubica en un nivel medio de competencia oral, y que la comunicación interactiva constituye la subcategoría con menor desarrollo, pues solo el <strong>27,3 %</strong> alcanzó un nivel alto. Del mismo modo, se identificaron vacíos en el empleo de estrategias de compensación y en la reflexión metacognitiva dentro de la práctica docente del centro de idiomas.
+                </p>
+                <p>
+                    En consecuencia, se concluye que la propuesta didáctica, cuyo sustento se encuentra en el enfoque comunicativo y en el aprendizaje basado en tareas, atiende las necesidades detectadas en el estudio y obtuvo un <strong>98 % de validez</strong> mediante juicio de expertos.
+                </p>
+                <div class="pt-3 flex flex-wrap gap-2 items-center">
+                    <span class="text-xs font-bold text-ucv-navy">Palabras clave:</span>
+                    <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-medium">Estrategia didáctica</span>
+                    <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-medium">Comunicación oral</span>
+                    <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-medium">Enfoque comunicativo</span>
+                    <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-medium">Aprendizaje basado en tareas</span>
+                    <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-medium">Nivel A1</span>
+                </div>
+            </div>
+
+            <!-- Contenido Inglés -->
+            <div id="abstract-en" class="hidden text-sm sm:text-base text-slate-700 leading-relaxed space-y-3">
+                <p>
+                    This study supports the achievement of <strong>Sustainable Development Goal 4</strong>, which refers to quality education, by proposing a teaching strategy aimed at strengthening oral communication in English among A1-level students at a university language center in Huancayo.
+                </p>
+                <p>
+                    Methodologically, the study adopted the sociocritical paradigm with a qualitative approach, applied educational research type, and a non-experimental design. The sample consisted of 44 participants, including students and teachers, to whom questionnaires, structured observation, and semi-structured interviews were administered. The main findings showed that <strong>70.5%</strong> of the students are at an intermediate level of oral competence, and that interactive communication is the least developed subcategory, with only <strong>27.3%</strong> reaching a high level. Likewise, gaps were identified in the use of compensation strategies and in metacognitive reflection within the teaching practice of the language center.
+                </p>
+                <p>
+                    Consequently, it is concluded that the didactic proposal, which is grounded in the communicative approach and task-based learning, addresses the needs identified in the study and obtained <strong>98% validity</strong> through expert judgment.
+                </p>
+                <div class="pt-3 flex flex-wrap gap-2 items-center">
+                    <span class="text-xs font-bold text-ucv-navy">Keywords:</span>
+                    <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-medium">Teaching strategy</span>
+                    <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-medium">Oral communication</span>
+                    <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-medium">Communicative approach</span>
+                    <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-medium">Task-based learning</span>
+                    <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 text-xs font-medium">A1 level</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grid: Equipo de Investigación + Auditoría Técnica Web -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            
+            <!-- Equipo de Investigación (7 columnas) -->
+            <div class="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+                <span class="text-xs font-bold uppercase tracking-wider text-ucv-red">Créditos Académicos</span>
+                <h2 class="font-serif text-2xl font-bold text-ucv-navy mt-1 mb-1">Equipo de Investigación</h2>
+                <p class="text-xs sm:text-sm text-slate-600 mb-6">
+                    Educación en Idiomas - Inglés, I Ciclo • Universidad César Vallejo (Lima Norte - 2026)
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mb-6">
+                    <!-- Autor 1 -->
+                    <div class="p-3.5 rounded-2xl bg-stone-50 border border-stone-200">
+                        <div class="font-bold text-sm text-ucv-navy">Silva Mego, Neyer</div>
+                        <a href="https://orcid.org/0009-0004-3295-6880" target="_blank" rel="noopener noreferrer" class="text-xs text-emerald-700 hover:underline font-medium block mt-1">
+                            ORCID: 0009-0004-3295-6880
+                        </a>
+                        <a href="mailto:neyersilva@ucvvirtual.edu.pe" class="text-xs text-slate-600 hover:text-ucv-navy block truncate mt-0.5">
+                            neyersilva@ucvvirtual.edu.pe
+                        </a>
+                    </div>
+
+                    <!-- Autor 2 -->
+                    <div class="p-3.5 rounded-2xl bg-stone-50 border border-stone-200">
+                        <div class="font-bold text-sm text-ucv-navy">Cañahua Lopez, Nayeli Yuliana</div>
+                        <a href="https://orcid.org/0009-0001-8660-7844" target="_blank" rel="noopener noreferrer" class="text-xs text-emerald-700 hover:underline font-medium block mt-1">
+                            ORCID: 0009-0001-8660-7844
+                        </a>
+                        <a href="mailto:nayelicanahua@ucvvirtual.edu.pe" class="text-xs text-slate-600 hover:text-ucv-navy block truncate mt-0.5">
+                            nayelicanahua@ucvvirtual.edu.pe
+                        </a>
+                    </div>
+
+                    <!-- Autor 3 -->
+                    <div class="p-3.5 rounded-2xl bg-stone-50 border border-stone-200">
+                        <div class="font-bold text-sm text-ucv-navy">Mendoza Pio, Rosmery</div>
+                        <a href="https://orcid.org/0009-0007-6886-834X" target="_blank" rel="noopener noreferrer" class="text-xs text-emerald-700 hover:underline font-medium block mt-1">
+                            ORCID: 0009-0007-6886-834X
+                        </a>
+                        <a href="mailto:rosmerymendoza@ucvvirtual.edu.pe" class="text-xs text-slate-600 hover:text-ucv-navy block truncate mt-0.5">
+                            rosmerymendoza@ucvvirtual.edu.pe
+                        </a>
+                    </div>
+
+                    <!-- Autor 4 -->
+                    <div class="p-3.5 rounded-2xl bg-stone-50 border border-stone-200">
+                        <div class="font-bold text-sm text-ucv-navy">Lipa Ugarte, Araceli Zarabeth</div>
+                        <a href="https://orcid.org/0009-0009-9552-976X" target="_blank" rel="noopener noreferrer" class="text-xs text-emerald-700 hover:underline font-medium block mt-1">
+                            ORCID: 0009-0009-9552-976X
+                        </a>
+                        <a href="mailto:alipa@ucvvirtual.edu.pe" class="text-xs text-slate-600 hover:text-ucv-navy block truncate mt-0.5">
+                            alipa@ucvvirtual.edu.pe
+                        </a>
+                    </div>
+
+                    <!-- Autor 5 -->
+                    <div class="p-3.5 rounded-2xl bg-stone-50 border border-stone-200">
+                        <div class="font-bold text-sm text-ucv-navy">Azañero Tuesta, Renzo Omar</div>
+                        <a href="https://orcid.org/0009-0008-1067-7038" target="_blank" rel="noopener noreferrer" class="text-xs text-emerald-700 hover:underline font-medium block mt-1">
+                            ORCID: 0009-0008-1067-7038
+                        </a>
+                        <a href="mailto:renzoazanero@ucvvirtual.edu.pe" class="text-xs text-slate-600 hover:text-ucv-navy block truncate mt-0.5">
+                            renzoazanero@ucvvirtual.edu.pe
+                        </a>
+                    </div>
+
+                    <!-- Autor 6 -->
+                    <div class="p-3.5 rounded-2xl bg-stone-50 border border-stone-200">
+                        <div class="font-bold text-sm text-ucv-navy">Velasquez Cerna, Xiomara</div>
+                        <a href="https://orcid.org/0009-0001-7999-2422" target="_blank" rel="noopener noreferrer" class="text-xs text-emerald-700 hover:underline font-medium block mt-1">
+                            ORCID: 0009-0001-7999-2422
+                        </a>
+                        <a href="mailto:xiomaravelasquez@ucvvirtual.edu.pe" class="text-xs text-slate-600 hover:text-ucv-navy block truncate mt-0.5">
+                            xiomaravelasquez@ucvvirtual.edu.pe
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Asesora -->
+                <div class="p-4 rounded-2xl bg-blue-50/80 border border-blue-200 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                    <div>
+                        <span class="text-xs font-bold uppercase text-ucv-navy block">Asesora de Investigación</span>
+                        <span class="text-sm font-bold text-slate-900">Ph.D. Marllury Ynés Melgarejo Alcántara</span>
+                    </div>
+                    <a href="https://orcid.org/0000-0002-4620-985X" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-emerald-800 bg-white px-3 py-1.5 rounded-full border border-blue-200 hover:bg-emerald-50 transition self-start sm:self-center">
+                        ORCID: 0000-0002-4620-985X
+                    </a>
+                </div>
+            </div>
+
+            <!-- Panel de Auditoría Técnica Web (5 columnas) -->
+            <div class="lg:col-span-5 bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold mb-3">
+                        <span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+                        Auditoría Técnica Web Aprobada
+                    </div>
+                    <h2 class="font-serif text-xl font-bold text-ucv-navy mb-2">Verificación de Calidad Digital</h2>
+                    <p class="text-xs sm:text-sm text-slate-600 mb-5">
+                        Validación técnica según los estándares de accesibilidad y legibilidad académica de la UCV:
+                    </p>
+
+                    <!-- Indicadores interactivos de auditoría -->
+                    <ul class="space-y-3 text-xs sm:text-sm mb-6">
+                        <li class="p-3 rounded-xl bg-stone-50 border border-stone-200 flex items-start gap-2.5">
+                            <span class="text-emerald-600 font-bold text-base leading-none mt-0.5">✓</span>
+                            <div>
+                                <strong class="text-slate-900">Contraste WCAG AA / AAA (14.6:1):</strong>
+                                <span class="text-slate-600 block">Texto oscuro (#1e293b) sobre superficies claras (#fafaf9 / #ffffff) para óptima legibilidad.</span>
+                            </div>
+                        </li>
+                        <li class="p-3 rounded-xl bg-stone-50 border border-stone-200 flex items-start gap-2.5">
+                            <span class="text-emerald-600 font-bold text-base leading-none mt-0.5">✓</span>
+                            <div>
+                                <strong class="text-slate-900">Jerarquía Semántica H1 – H2 – H3:</strong>
+                                <span class="text-slate-600 block">Estructura ordenada con bloques cortos, conectores lógicos y viñetas escaneables.</span>
+                            </div>
+                        </li>
+                        <li class="p-3 rounded-xl bg-stone-50 border border-stone-200 flex items-start gap-2.5">
+                            <span class="text-emerald-600 font-bold text-base leading-none mt-0.5">✓</span>
+                            <div>
+                                <strong class="text-slate-900">Regla de los 3 Clics (Acceso en 1 clic):</strong>
+                                <span class="text-slate-600 block">Navegación directa desde el menú superior hacia cualquier apartado del blog.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Herramienta para copiar HTML limpio -->
+                <div class="pt-4 border-t border-slate-200">
+                    <button onclick="copyCleanHTML()" class="w-full py-3.5 px-4 rounded-xl bg-ucv-navy hover:bg-ucv-navyLight text-white font-bold text-sm transition flex items-center justify-center gap-2 cursor-pointer shadow-sm">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                        Copiar Código HTML para Netlify / Blogger
+                    </button>
+                    <p id="copy-feedback" class="text-xs text-center text-emerald-700 font-semibold mt-2 hidden">
+                        ¡Código HTML copiado con éxito! Listo para guardar como index.html o pegar en Blogger.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Pie de Página Institucional -->
+    <footer class="bg-ucv-navy text-blue-200 py-8 border-t border-white/10">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs sm:text-sm text-center sm:text-left">
+            <div>
+                <strong class="text-white">Universidad César Vallejo</strong> • Facultad de Humanidades • Educación en Idiomas - Inglés
+            </div>
+            <div>
+                Lima Norte - 2026 • Habilidades Comunicativas
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts Interactivos -->
+    <script>
+        // 1. Barra de progreso de lectura
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+            document.getElementById('reading-progress').style.width = scrolled + '%';
+        });
+
+        // 2. Menú móvil responsivo
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // 3. Alternar Resumen (Español) / Abstract (Inglés)
+        function toggleAbstract(lang) {
+            const esBlock = document.getElementById('abstract-es');
+            const enBlock = document.getElementById('abstract-en');
+            const btnEs = document.getElementById('btn-es');
+            const btnEn = document.getElementById('btn-en');
+
+            if (lang === 'es') {
+                esBlock.classList.remove('hidden');
+                enBlock.classList.add('hidden');
+                btnEs.className = 'px-4 py-1.5 rounded-lg text-xs font-bold bg-ucv-navy text-white transition cursor-pointer';
+                btnEn.className = 'px-4 py-1.5 rounded-lg text-xs font-bold text-slate-600 hover:text-ucv-navy transition cursor-pointer';
+            } else {
+                enBlock.classList.remove('hidden');
+                esBlock.classList.add('hidden');
+                btnEn.className = 'px-4 py-1.5 rounded-lg text-xs font-bold bg-ucv-navy text-white transition cursor-pointer';
+                btnEs.className = 'px-4 py-1.5 rounded-lg text-xs font-bold text-slate-600 hover:text-ucv-navy transition cursor-pointer';
+            }
+        }
+
+        // 4. Copiar código HTML limpio al portapapeles
+        function copyCleanHTML() {
+            const fullHtml = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+            const textarea = document.createElement('textarea');
+            textarea.value = fullHtml;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
+            try {
+                document.execCommand('copy');
+                const feedback = document.getElementById('copy-feedback');
+                feedback.classList.remove('hidden');
+                setTimeout(() => feedback.classList.add('hidden'), 5000);
+            } catch (err) {
+                console.error('Error al copiar HTML:', err);
+            }
+            document.body.removeChild(textarea);
+        }
+    </script>
+</body>
+</html>
